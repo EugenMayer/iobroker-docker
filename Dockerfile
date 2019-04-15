@@ -20,7 +20,7 @@ RUN npm install -g npm@6
 # Install iobroker
 RUN curl -sL https://raw.githubusercontent.com/ioBroker/ioBroker/master/installer.sh | bash -
 
-# Deasaalate permission from root to user "iobroker", outherwise iobroker will be started by root -> this leadsto error during adaptor installation
+# Deescalate permissions from root to user "iobroker", otherwise iobroker will be started as root, leading to errors during adaptor installation with npm
 USER iobroker
 
 EXPOSE 8081 
